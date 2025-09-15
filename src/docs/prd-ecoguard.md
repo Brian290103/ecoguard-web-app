@@ -17,3 +17,4 @@ This document serves as the main index for the EcoGuard Product Requirements Doc
 - [6. Success Metrics and Release Criteria](./prd/06-success-metrics.md)
 - [7. Appendices](./prd/07-appendices.md)
 - [8. User Roles and Responsibilities](./prd/08-user-roles.md)
+- [9. User Workflows](./prd/09-workflows.md)

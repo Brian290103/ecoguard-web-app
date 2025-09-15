@@ -1,5 +1,14 @@
 # Landing Page: Home
 
+## Navigation
+- [Home](./home.md)
+- [Features](./features.md)
+- [How It Works](./how-it-works.md)
+- [About EcoGuard](./about.md)
+- [Contact Us](./contact-us.md)
+
+---
+
 This document outlines the key content and sections for the EcoGuard landing page's home section. The goal is to immediately convey the application's purpose, value proposition, and encourage user engagement.
 
 ## Key Sections:

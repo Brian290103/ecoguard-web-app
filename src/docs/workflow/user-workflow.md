@@ -76,7 +76,8 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 2.  The app automatically captures the user's current location (which can be adjusted manually).
 3.  The user uploads photos or videos of the issue.
 4.  The user selects a category (e.g., "Illegal Dumping," "Pollution," "Stray Animal") and adds a detailed description.
-5.  The user submits the report.
+5.  The user selects a priority level for the report (High, Medium, or Low). This selection helps determine the notification workflow (i.e., whether to immediately alert Local Authorities or notify relevant Organizations).
+6.  The user submits the report.
 
 ### 3.3 Tracking a Report
 1.  The user can view all their submitted reports in their profile under "My Reports."

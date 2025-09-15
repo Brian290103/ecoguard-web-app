@@ -4,7 +4,7 @@ This document outlines the step-by-step workflow for a Local Authority represent
 
 ## Table of Contents
 - [Chapter 1: Authentication and Account Activation](#chapter-1-authentication-and-account-activation)
-  - [1.1 Account Provisioning](#11-account-provisioning)
+  - [1.1 Self-Registration](#11-self-registration)
   - [1.2 Email Verification](#12-email-verification)
   - [1.3 Admin Approval](#13-admin-approval)
   - [1.4 Sign In](#14-sign-in)
@@ -23,25 +23,28 @@ This document outlines the step-by-step workflow for a Local Authority represent
 
 ## Chapter 1: Authentication and Account Activation
 
-### 1.1 Account Provisioning
-1.  A designated Admin (System Manager) creates an account for the Local Authority representative within the EcoGuard system.
-2.  The Admin assigns the "Local Authority" role and sets up initial permissions.
-3.  An invitation email is sent to the representative's official email address.
+### 1.1 Self-Registration
+1.  The Local Authority representative navigates to the "Register as Local Authority" screen.
+2.  They provide their official email address, create a secure password, and submit relevant organizational details (e.g., department name, jurisdiction).
+3.  During registration, they are prompted to grant location permissions, which are essential for receiving geo-specific reports.
+4.  Upon successful registration, their account status is set to "Pending Email Verification."
 
 ### 1.2 Email Verification
-1.  The Local Authority representative receives the invitation email and clicks on the verification link.
-2.  They are prompted to set up their password.
-3.  Upon successful password setup and email verification, their account status changes to "Pending Admin Approval."
+1.  A verification email with a unique link or code is sent to the representative's registered email address.
+2.  They must click the verification link or enter the code to verify their email.
+3.  Upon successful email verification, their account status changes to "Pending Admin Approval."
 
 ### 1.3 Admin Approval
 1.  The Admin (System Manager) receives a notification that a new Local Authority account is pending approval.
-2.  The Admin reviews the account details and grants final approval.
+2.  The Admin reviews the account details, verifies the organizational information, and grants final approval.
 3.  Once approved, the Local Authority representative receives a notification that their account is active.
 
 ### 1.4 Sign In
 1.  The Local Authority representative navigates to the "Sign In" screen.
 2.  They enter their verified email and password.
-3.  Upon successful authentication and confirmation of active status, they are directed to their Local Authority dashboard.
+3.  The system checks if their account has been approved by an Admin.
+    -   If not approved, they are informed that their account is still pending review.
+    -   If approved, they are successfully authenticated and directed to their Local Authority dashboard.
 
 ### 1.5 Forgot Password
 1.  On the "Sign In" screen, the representative clicks the "Forgot Password?" link.

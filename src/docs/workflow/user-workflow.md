@@ -92,9 +92,13 @@ To foster local engagement, the system automatically groups users into location-
 
 1.  **Location-Based Matching**: When a user registers or updates their location, the system checks for other users within a predefined radius (e.g., 1 KM).
 2.  **Automatic Community Creation**:
-    -   If a user is near one or more other users but not yet part of a local community, the system automatically creates a new community for that geographic area.
-    -   All users within that radius are then invited to join this new community.
-3.  **Joining Existing Communities**: If a community already exists for the user's location, they are automatically prompted to join it.
+    -   If a local community does not yet exist for the user's area, the system checks for the number of nearby users.
+    -   A new community is automatically created if there are at least 50 users within the 1 KM radius.
+    -   All users within that radius are then invited to join this new, automatically created community.
+3.  **Joining Existing Local Communities**: If a community already exists for the user's location, they are automatically prompted to join it.
+4.  **Joining Organization-Led Communities**:
+    -   In addition to their local community, users can browse and join non-geographical communities created by Organizations.
+    -   These communities are typically focused on specific topics or long-term projects (e.g., "National Reforestation Efforts," "Marine Life Protection").
 
 ---
 

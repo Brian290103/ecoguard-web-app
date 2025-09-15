@@ -48,6 +48,7 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 1.  After the tour, the user is prompted to complete their profile.
 2.  The user can upload a profile picture, set a username, and add a short bio.
 3.  The user can also select their interests (e.g., "Wildlife," "Recycling," "Clean Energy") to personalize their content feed.
+4.  During this step, the user grants permission to access their location, which is used for issue reporting and community grouping.
 
 ---
 
@@ -85,6 +86,15 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 ### 4.2 Participating in Events
 1.  In the community section, the user can view a list of upcoming local events (e.g., clean-up drives, workshops).
 2.  They can view event details and RSVP.
+
+### 4.3 Automatic Community Grouping
+To foster local engagement, the system automatically groups users into location-based communities.
+
+1.  **Location-Based Matching**: When a user registers or updates their location, the system checks for other users within a predefined radius (e.g., 1 KM).
+2.  **Automatic Community Creation**:
+    -   If a user is near one or more other users but not yet part of a local community, the system automatically creates a new community for that geographic area.
+    -   All users within that radius are then invited to join this new community.
+3.  **Joining Existing Communities**: If a community already exists for the user's location, they are automatically prompted to join it.
 
 ---
 

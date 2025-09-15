@@ -30,12 +30,16 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 2.  The user can choose to sign up using:
     -   Email and a secure password.
     -   A third-party social account (Google or Facebook).
-3.  Upon successful sign-up, the user is automatically logged in.
+3.  If signing up with email, the user provides their email address and creates a password.
+4.  A verification email with a unique link or code is sent to the user's registered email address.
+5.  The user must click the verification link or enter the code to activate their account.
 
 ### 1.2 Sign In
 1.  The user navigates to the "Sign In" screen.
 2.  The user enters their credentials (email and password) or selects a social login option.
-3.  Upon successful authentication, the user is directed to their dashboard.
+3.  The system checks if the user's email has been verified.
+    -   If the email is not verified, the user is prompted to check their email and complete the verification step. A "Resend Verification Email" option is available.
+    -   If the email is verified, the user is successfully authenticated and directed to their dashboard.
 
 ### 1.3 Forgot Password
 1.  On the "Sign In" screen, the user clicks the "Forgot Password?" link.

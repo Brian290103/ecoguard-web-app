@@ -17,8 +17,8 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 - [Chapter 4: Community and Engagement](#chapter-4-community-and-engagement)
   - [4.1 Engaging with the Community](#41-engaging-with-the-community)
   - [4.2 Participating in Events](#42-participating-in-events)
-- [Chapter 5: Learning and Gamification](#chapter-5-learning-and-gamification)
-  - [5.1 Accessing Educational Content](#51-accessing-educational-content)
+- [Chapter 5: Resources and Gamification](#chapter-5-resources-and-gamification)
+  - [5.1 Accessing Educational Resources](#51-accessing-educational-resources)
   - [5.2 Earning Rewards](#52-earning-rewards)
 
 ---
@@ -99,15 +99,27 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 
 ---
 
-## Chapter 5: Learning and Gamification
+## Chapter 5: Resources and Gamification
 
-### 5.1 Accessing Educational Content
-1.  The user navigates to the "Learn" tab.
-2.  They can browse a library of articles, videos, and infographics on various environmental topics.
+### 5.1 Accessing Educational Resources
+1.  The user navigates to the "Resources" tab.
+2.  They can browse a library of educational materials published by verified Organizations.
+3.  The resources are presented in a filterable list and can be of various formats:
+    -   YouTube videos (embedded player)
+    -   PDF documents (inline viewer)
+    -   Text articles
+    -   Links to external websites
+    -   Image galleries
+    -   Video files (native player)
+4.  **AI-Powered Document Interaction**:
+    -   For all text-based resources (PDFs, text articles, and content from website links), the user can interact with an AI-powered chat interface.
+    -   This allows the user to ask questions in natural language and receive answers generated from the content of the documents (Retrieval-Augmented Generation).
+    -   For example, a user could ask, "What are the main causes of deforestation mentioned in this report?" and get a summarized answer.
 
 ### 5.2 Earning Rewards
 1.  The user earns points and badges for completing actions, such as:
     -   Submitting their first report.
     -   Participating in a community event.
     -   Completing a daily quiz.
+    -   Engaging with educational resources.
 2.  The user can track their progress on the leaderboard.

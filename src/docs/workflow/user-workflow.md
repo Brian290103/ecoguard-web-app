@@ -4,22 +4,11 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 
 ## Table of Contents
 - [Chapter 1: Authentication](#chapter-1-authentication)
-  - [1.1 Sign Up](#11-sign-up)
-  - [1.2 Sign In](#12-sign-in)
-  - [1.3 Forgot Password](#13-forgot-password)
 - [Chapter 2: Onboarding and Profile Setup](#chapter-2-onboarding-and-profile-setup)
-  - [2.1 Welcome Tour](#21-welcome-tour)
-  - [2.2 Profile Customization](#22-profile-customization)
 - [Chapter 3: Core Application Usage](#chapter-3-core-application-usage)
-  - [3.1 The Dashboard](#31-the-dashboard)
-  - [3.2 Reporting an Issue](#32-reporting-an-issue)
-  - [3.3 Tracking a Report](#33-tracking-a-report)
 - [Chapter 4: Community and Engagement](#chapter-4-community-and-engagement)
-  - [4.1 Engaging with the Community](#41-engaging-with-the-community)
-  - [4.2 Participating in Events](#42-participating-in-events)
-- [Chapter 5: Resources and Gamification](#chapter-5-resources-and-gamification)
-  - [5.1 Accessing Educational Resources](#51-accessing-educational-resources)
-  - [5.2 Earning Rewards](#52-earning-rewards)
+- [Chapter 5: Educational Resources](#chapter-5-educational-resources)
+- [Chapter 6: Gamification](#chapter-6-gamification)
 
 ---
 
@@ -99,9 +88,9 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
 
 ---
 
-## Chapter 5: Resources and Gamification
+## Chapter 5: Educational Resources
 
-### 5.1 Accessing Educational Resources
+### 5.1 Accessing the Resource Library
 1.  The user navigates to the "Resources" tab.
 2.  They can browse a library of educational materials published by verified Organizations.
 3.  The resources are presented in a filterable list and can be of various formats:
@@ -111,15 +100,46 @@ This document outlines the step-by-step workflow for a General User ("Eco-Citize
     -   Links to external websites
     -   Image galleries
     -   Video files (native player)
-4.  **AI-Powered Document Interaction**:
-    -   For all text-based resources (PDFs, text articles, and content from website links), the user can interact with an AI-powered chat interface.
-    -   This allows the user to ask questions in natural language and receive answers generated from the content of the documents (Retrieval-Augmented Generation).
-    -   For example, a user could ask, "What are the main causes of deforestation mentioned in this report?" and get a summarized answer.
 
-### 5.2 Earning Rewards
-1.  The user earns points and badges for completing actions, such as:
-    -   Submitting their first report.
-    -   Participating in a community event.
-    -   Completing a daily quiz.
-    -   Engaging with educational resources.
-2.  The user can track their progress on the leaderboard.
+### 5.2 AI-Powered Document Interaction
+1.  For all text-based resources (PDFs, text articles, and content from website links), the user can interact with an AI-powered chat interface.
+2.  This allows the user to ask questions in natural language and receive answers generated from the content of the documents (Retrieval-Augmented Generation).
+3.  For example, a user could ask, "What are the main causes of deforestation mentioned in this report?" and get a summarized answer.
+
+---
+
+## Chapter 6: Gamification
+
+The gamification system is designed to encourage active participation, reward contributions, and foster a sense of community and friendly competition.
+
+### 6.1 Points System
+Users earn "Eco-Points" for nearly every positive action they take on the platform. The points system is transparent, and users can see how many points each action is worth.
+
+- **Reporting**:
+  - Submitting a valid report: +10 points
+  - Report gets verified and resolved: +50 points
+- **Community**:
+  - Commenting on a post: +2 points
+  - Receiving an upvote on a comment/post: +1 point
+  - Creating a community event: +25 points
+- **Learning**:
+  - Completing a quiz: +15 points
+  - Reading a resource: +5 points
+
+### 6.2 Leaderboards
+1.  The user can access weekly, monthly, and all-time leaderboards.
+2.  Leaderboards display the top users based on their Eco-Points, showcasing top contributors in the community.
+3.  Users can see their own rank and how they compare to others.
+
+### 6.3 Badges and Achievements
+Badges are awarded for reaching specific milestones and demonstrating commitment to environmental conservation. Users can display their favorite badges on their profile.
+
+**Example Badges**:
+-   **First Responder**: Awarded for submitting your first valid issue report.
+-   **Community Starter**: Awarded for creating your first community event.
+-   **Knowledge Seeker**: Awarded for completing 10 quizzes.
+-   **Eco-Streak**: Awarded for logging in and performing a positive action 7 days in a row.
+-   **Photographer**: Awarded when 5 of your report photos are featured.
+-   **Wildlife Watcher**: Awarded for reporting 10 wildlife-related issues.
+-   **Clean-Up Champion**: Awarded for participating in 3 community clean-up events.
+-   **Top Contributor**: A prestigious, tiered badge (Bronze, Silver, Gold) awarded to users who reach high point thresholds.

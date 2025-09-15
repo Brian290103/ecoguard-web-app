@@ -18,3 +18,4 @@ This document serves as the main index for the EcoGuard Product Requirements Doc
 - [7. Appendices](./prd/07-appendices.md)
 - [8. User Roles and Responsibilities](./prd/08-user-roles.md)
 - [9. User Workflows](./prd/09-workflows.md)
+- [10. Project Milestones](./prd/10-milestones.md)

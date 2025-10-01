@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/drizzle";
 import { user } from "@/db/schema";
 import {
@@ -10,22 +10,21 @@ import {
 } from "@/db/schemas/community";
 
 export const GET = async (
-  req: Request,
-  { params }: { params: { id: string } },
+  req: NextRequest, // Changed
+  { params }: { params: { id: string } }, // Keep synchronous
 ) => {
   try {
     const communityRows = await db
       .select({
         community: community,
-        communityUser: communityUser, // Assumed to be imported schema for 'community_users' table
-        user: user, // Assumed to be imported schema for 'users' table
+        communityUser: communityUser,
+        user: user,
       })
       .from(community)
       .leftJoin(communityUser, eq(community.id, communityUser.communityId))
       .leftJoin(user, eq(communityUser.userId, user.id))
       .where(eq(community.id, params.id));
 
-    // Define the type for the final structured data to match db.query.community.findFirst's output type
     type CommunityWithUsers = typeof community.$inferSelect & {
       communityUsers: (typeof communityUser.$inferSelect & {
         user: typeof user.$inferSelect;
@@ -36,15 +35,13 @@ export const GET = async (
 
     if (communityRows.length > 0) {
       const firstRow = communityRows[0];
-      // Ensure the community itself was found (i.e., not just nulls from left joins if no community matches)
       if (firstRow.community) {
         communityData = {
           ...firstRow.community,
-          communityUsers: [], // Initialize with an empty array
+          communityUsers: [],
         };
 
         communityRows.forEach((row) => {
-          // Only add if both communityUser and user data exist for this row (from the left joins)
           if (row.communityUser && row.user) {
             communityData!.communityUsers.push({
               ...row.communityUser,
@@ -54,12 +51,14 @@ export const GET = async (
         });
       }
     }
+
     if (!communityData) {
       return NextResponse.json(
         { error: "Community not found" },
         { status: 404 },
       );
     }
+
     return NextResponse.json(communityData);
   } catch (error) {
     return NextResponse.json(
@@ -70,17 +69,19 @@ export const GET = async (
 };
 
 export const PUT = async (
-  req: Request,
+  req: NextRequest, // Changed
   { params }: { params: { id: string } },
 ) => {
   try {
     const body = await req.json();
     const updatedCommunity = insertCommunitySchema.parse(body);
+
     const result = await db
       .update(community)
       .set(updatedCommunity)
       .where(eq(community.id, params.id))
       .returning();
+
     revalidatePath(`/dashboard/admin/communities/${params.id}`);
     return NextResponse.json(result[0]);
   } catch (error) {
@@ -92,7 +93,7 @@ export const PUT = async (
 };
 
 export const DELETE = async (
-  req: Request,
+  req: NextRequest, // Changed
   { params }: { params: { id: string } },
 ) => {
   try {

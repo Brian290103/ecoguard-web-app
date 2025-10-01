@@ -1,6 +1,6 @@
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { StreamChat } from "stream-chat";
 import { db } from "@/db/drizzle";
 import {
@@ -15,10 +15,11 @@ const serverClient = StreamChat.getInstance(
   process.env.STREAM_API_SECRET!,
 );
 
-export const POST = async (req: Request) => {
+export const POST = async (req: NextRequest) => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -30,7 +31,6 @@ export const POST = async (req: Request) => {
     const newCommunityData = insertCommunitySchema.parse(body);
     console.log("newCommunityData", newCommunityData);
 
-    // Removed db.transaction
     const [createdCommunity] = await db
       .insert(community)
       .values(newCommunityData)
@@ -43,7 +43,7 @@ export const POST = async (req: Request) => {
     });
 
     revalidatePath("/dashboard/admin/communities");
-    return NextResponse.json(createdCommunity, { status: 201 }); // Return the createdCommunity
+    return NextResponse.json(createdCommunity, { status: 201 });
   } catch (error) {
     return NextResponse.json(
       {

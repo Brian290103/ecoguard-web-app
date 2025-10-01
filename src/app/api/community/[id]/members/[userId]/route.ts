@@ -1,15 +1,16 @@
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/drizzle";
 import { communityUser } from "@/db/schemas/community";
 
 export const PUT = async (
-  req: Request,
-  { params }: { params: { id: string; userId: string } },
+  req: NextRequest, // Use NextRequest
+  { params }: { params: { id: string; userId: string } }, // Plain params
 ) => {
   try {
     const body = await req.json();
+
     const result = await db
       .update(communityUser)
       .set({ role: body.role })
@@ -20,7 +21,10 @@ export const PUT = async (
         ),
       )
       .returning();
+
+    // Revalidate cache for this community page
     revalidatePath(`/dashboard/admin/communities/${params.id}`);
+
     return NextResponse.json(result[0]);
   } catch (error) {
     return NextResponse.json(
@@ -31,7 +35,7 @@ export const PUT = async (
 };
 
 export const DELETE = async (
-  req: Request,
+  req: NextRequest, // Use NextRequest
   { params }: { params: { id: string; userId: string } },
 ) => {
   try {
@@ -44,7 +48,9 @@ export const DELETE = async (
         ),
       )
       .returning();
+
     revalidatePath(`/dashboard/admin/communities/${params.id}`);
+
     return new NextResponse(null, { status: 204 });
   } catch (error) {
     return NextResponse.json(

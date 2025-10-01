@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/drizzle";
 import {
   communityUser,
@@ -8,17 +8,24 @@ import {
 } from "@/db/schemas/community";
 
 export const POST = async (
-  req: Request,
-  { params }: { params: { id: string } },
+  req: NextRequest, // Use NextRequest
+  { params }: { params: { id: string } }, // Synchronous params
 ) => {
   try {
     const body = await req.json();
+
+    // Validate input
     const newMember = insertCommunityUserSchema.parse({
       communityId: params.id,
       ...body,
     });
+
+    // Insert into DB
     const result = await db.insert(communityUser).values(newMember).returning();
+
+    // Revalidate cache for this community page
     revalidatePath(`/dashboard/admin/communities/${params.id}`);
+
     return NextResponse.json(result[0], { status: 201 });
   } catch (error) {
     return NextResponse.json(
@@ -29,7 +36,7 @@ export const POST = async (
 };
 
 export const GET = async (
-  req: Request,
+  req: NextRequest, // Use NextRequest
   { params }: { params: { id: string } },
 ) => {
   try {
@@ -39,6 +46,7 @@ export const GET = async (
         user: true,
       },
     });
+
     return NextResponse.json(members);
   } catch (error) {
     return NextResponse.json(

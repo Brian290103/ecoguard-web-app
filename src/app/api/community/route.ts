@@ -1,6 +1,6 @@
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { StreamChat } from "stream-chat";
 import { db } from "@/db/drizzle";
 import {

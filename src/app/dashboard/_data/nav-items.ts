@@ -10,6 +10,7 @@ import {
   IconUsers,
   IconUsersGroup,
 } from "@tabler/icons-react";
+import { CirclePlus } from "lucide-react";
 
 export const userNavItems = [
   {
@@ -35,30 +36,10 @@ export const userNavItems = [
         url: "/dashboard/user/create-report",
         icon: IconFilePencil,
       },
-      {
-        name: "History",
-        url: "/dashboard/user/history",
-        icon: IconHistory,
-      },
     ],
   },
   {
     label: "Community",
-    items: [
-      {
-        name: "Community",
-        url: "/dashboard/user/community",
-        icon: IconUsersGroup,
-      },
-      {
-        name: "Events",
-        url: "/dashboard/user/events",
-        icon: IconCalendarEvent,
-      },
-    ],
-  },
-  {
-    label: "Engagement",
     items: [
       {
         name: "Resources",
@@ -66,9 +47,9 @@ export const userNavItems = [
         icon: IconBook,
       },
       {
-        name: "Daily Quizzes",
-        url: "/dashboard/user/quizzes",
-        icon: IconQuestionMark,
+        name: "Events",
+        url: "/dashboard/user/events",
+        icon: IconCalendarEvent,
       },
     ],
   },
@@ -111,15 +92,20 @@ export const orgNavItems = [
         url: "/dashboard/org",
         icon: IconDashboard,
       },
-    ],
-  },
-  {
-    label: "Organization",
-    items: [
       {
         name: "Reports",
         url: "/dashboard/org/reports",
         icon: IconFiles,
+      },
+      {
+        name: "Resources",
+        url: "/dashboard/org/resources",
+        icon: IconBook,
+      },
+      {
+        name: "Events",
+        url: "/dashboard/org/events",
+        icon: IconCalendarEvent,
       },
     ],
   },
@@ -134,15 +120,20 @@ export const authorityNavItems = [
         url: "/dashboard/authority",
         icon: IconDashboard,
       },
-    ],
-  },
-  {
-    label: "Reports",
-    items: [
       {
-        name: "All Reports",
+        name: "Reports",
         url: "/dashboard/authority/reports",
         icon: IconFiles,
+      },
+      {
+        name: "Resources",
+        url: "/dashboard/authority/resources",
+        icon: IconBook,
+      },
+      {
+        name: "Events",
+        url: "/dashboard/authority/events",
+        icon: IconCalendarEvent,
       },
     ],
   },

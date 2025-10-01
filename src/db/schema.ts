@@ -1,6 +1,7 @@
 export * from "./schemas/auth";
 export * from "./schemas/community";
 export * from "./schemas/embeddings";
+export * from "./schemas/events";
 export * from "./schemas/notification";
 export * from "./schemas/notification-preferences";
 export * from "./schemas/one-signal-subscriptions";
@@ -8,3 +9,4 @@ export * from "./schemas/report";
 export * from "./schemas/report-history";
 export * from "./schemas/report-organization-match";
 export * from "./schemas/resolution-report";
+export * from "./schemas/resources";

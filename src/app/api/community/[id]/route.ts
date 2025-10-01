@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/drizzle";
 import { user } from "@/db/schema";
 import {

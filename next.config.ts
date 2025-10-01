@@ -33,19 +33,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "utfs.io",
+        hostname: "**", // allow all hosts
       },
       {
-        protocol: "https",
-        hostname: "9mdxt4o8xb.ufs.sh",
-      },
-      {
-        protocol: "https",
-        hostname: "via.placeholder.com",
-      },
-      {
-        protocol: "https",
-        hostname: "github.com",
+        protocol: "http",
+        hostname: "**", // also allow http if needed
       },
     ],
   },

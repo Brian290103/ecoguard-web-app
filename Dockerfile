@@ -4,6 +4,10 @@
 FROM oven/bun:1.2.19 AS base
 WORKDIR /app
 
+# Install build tools for native modules like better-sqlite3
+RUN apt-get update && apt-get install -y python3 make g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 # ---------------------------
 # 2. Install dependencies
 # ---------------------------

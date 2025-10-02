@@ -21,6 +21,9 @@ export function OneSignalWrapper({
           appId: `${process.env.NEXT_PUBLIC_ONE_SIGNAL_APP_ID!}`,
           allowLocalhostAsSecureOrigin: true,
           notifyWhenAppInFocus: true,
+          notifyButton: {
+            enable: true,
+          },
         });
 
         // Send playerId when available

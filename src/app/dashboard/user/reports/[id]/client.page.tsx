@@ -35,10 +35,10 @@ const SingleReportClientPage = ({
                 <Image className="h-4 w-4" />
                 Media
               </TabsTrigger>
-              <TabsTrigger value="results" className="flex items-center gap-2">
+              {/*<TabsTrigger value="results" className="flex items-center gap-2">
                 <ChartBar className="h-4 w-4" />
                 Results
-              </TabsTrigger>
+              </TabsTrigger>*/}
               <TabsTrigger value="timeline" className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
                 Timeline
@@ -50,10 +50,10 @@ const SingleReportClientPage = ({
                 <Clock className="h-4 w-4" />
                 Resolution
               </TabsTrigger>
-              <TabsTrigger value="comments" className="flex items-center gap-2">
+              {/*<TabsTrigger value="comments" className="flex items-center gap-2">
                 <MessageSquare className="h-4 w-4" />
                 Comments
-              </TabsTrigger>
+              </TabsTrigger>*/}
             </TabsList>
           </CardContent>
         </Card>
@@ -66,9 +66,9 @@ const SingleReportClientPage = ({
             videoUrls={singleReport?.videoUrls!}
           />
         </TabsContent>
-        <TabsContent value="results">
+        {/*<TabsContent value="results">
           <div className="py-4">Results content goes here</div>
-        </TabsContent>
+        </TabsContent>*/}
         <TabsContent value="timeline">
           <TimelineTab reportHistory={singleReport?.history} />
         </TabsContent>
@@ -78,9 +78,9 @@ const SingleReportClientPage = ({
             reportStatus={singleReport?.status!}
           />
         </TabsContent>
-        <TabsContent value="comments">
+        {/*<TabsContent value="comments">
           <div className="py-4">Comments content goes here</div>
-        </TabsContent>
+        </TabsContent>*/}
       </Tabs>
     </div>
   );

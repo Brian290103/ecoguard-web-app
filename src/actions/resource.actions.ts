@@ -7,7 +7,7 @@ import type {
 type CreateResource = z.infer<typeof insertResourcesSchema>;
 type SelectResource = z.infer<typeof selectResourcesSchema>;
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
 export const createResource = async (
   data: CreateResource,

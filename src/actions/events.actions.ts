@@ -7,7 +7,7 @@ import type {
 type CreateEvent = z.infer<typeof insertEventsSchema>;
 type SelectEvent = z.infer<typeof selectEventsSchema>;
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
 export const createEvent = async (data: CreateEvent): Promise<SelectEvent> => {
   const response = await fetch(`${baseUrl}/api/events`, {

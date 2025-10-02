@@ -9,12 +9,11 @@ const CompleteProfilePage = async () => {
   });
 
   if (
-    session?.user.phoneNumber &&
-    session?.user.county &&
-    session?.user.subCounty &&
-    session?.user.jobTitle
+    session?.user.orgName &&
+    session?.user.orgDescription &&
+    session?.user.orgLogo
   ) {
-    redirect("/dashboard/authority/");
+    redirect("/dashboard/org/");
   }
 
   return (

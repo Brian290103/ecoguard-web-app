@@ -36,8 +36,7 @@ const navSecondary = [
   },
 ];
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { data: session } = authClient.useSession();
+export function AppSidebar({ session }) {
   const user = session?.user;
   const userRole = user?.role;
 
@@ -62,7 +61,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   }
 
   return (
-    <Sidebar className="border-e" collapsible="icon" {...props}>
+    <Sidebar className="border-e" collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

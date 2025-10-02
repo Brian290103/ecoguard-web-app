@@ -1,3 +1,4 @@
+import { SiteHeaderSetter } from "../_components/SiteHeaderSetter";
 import { ClientPage } from "./client.page";
 import CreateReportPage from "./create-report/page";
 import EventsPage from "./events/page";
@@ -30,6 +31,8 @@ const Page = () => {
 
   return (
     <div>
+      {" "}
+      <SiteHeaderSetter title="User: Dashboard" />
       <ClientPage tabs={tabs} />
     </div>
   );

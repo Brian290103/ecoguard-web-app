@@ -1,6 +1,8 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavTitleStore } from "@/store/nav-title-store";
+import { useEffect } from "react";
 
 type Tab = {
   title: string;

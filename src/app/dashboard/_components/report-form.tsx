@@ -222,7 +222,7 @@ export function ReportForm() {
 
   useEffect(() => {
     if (debouncedTitle && debouncedDescription) {
-      // generateCategories();
+      generateCategories();
     }
   }, [debouncedTitle, debouncedDescription]);
 

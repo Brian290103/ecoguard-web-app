@@ -1,4 +1,5 @@
 import { getEvents } from "@/actions/events.actions";
+import { SiteHeaderSetter } from "@/app/dashboard/_components/SiteHeaderSetter";
 import { EventsList } from "@/app/dashboard/org/(auth)/events/EventsList";
 import {
   Card,
@@ -12,13 +13,13 @@ export default async function EventsPage() {
 
   return (
     <div className="container mx-auto  flex flex-col gap-3">
+      <SiteHeaderSetter title="Authority: Events" />
       <Card>
         <CardHeader>
           <CardTitle>Events</CardTitle>
           <CardDescription>Explore and manage your events.</CardDescription>
         </CardHeader>
       </Card>
-
       <EventsList events={events} />
     </div>
   );

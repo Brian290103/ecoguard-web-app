@@ -10,11 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ReportsClientPage from "./client.page";
+import { SiteHeaderSetter } from "../../_components/SiteHeaderSetter";
 
 const ReportsPage = async () => {
   const reports = await serverClient.report.getAllReports();
   return (
     <div className="flex flex-col gap-3">
+      {" "}
+      <SiteHeaderSetter title="User: Reports" />
       <Card>
         <CardHeader>
           <CardTitle>My Submittted Reports</CardTitle>

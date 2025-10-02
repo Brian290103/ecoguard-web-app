@@ -10,12 +10,17 @@ import {
 } from "@/components/ui/card";
 import type { Event } from "@/db/schema";
 import { DeleteEventButton } from "./DeleteEventButton";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 type EventCardProps = {
   event: Event;
 };
 
-export function EventCard({ event }: EventCardProps) {
+export async function EventCard({ event }: EventCardProps) {
+  const session = await auth.api.getSession({
+    headers: await headers(), // you need to pass the headers object.
+  });
   return (
     <Card key={event.id} className="flex flex-col">
       <CardContent>
@@ -46,7 +51,11 @@ export function EventCard({ event }: EventCardProps) {
             Ends: {format(new Date(event.endDateTime), "PPP p")}
           </p>
         </div>
-        <DeleteEventButton eventId={event.id} />
+        {session?.user.role === "org" && (
+          <div>
+            <DeleteEventButton eventId={event.id} />
+          </div>
+        )}
       </CardFooter>
     </Card>
   );

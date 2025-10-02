@@ -1,4 +1,5 @@
 import { serverClient } from "@/app/_trpc/server-client";
+import { SiteHeaderSetter } from "@/app/dashboard/_components/SiteHeaderSetter";
 import SingleReportClientPage from "@/app/dashboard/user/reports/[id]/client.page";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,8 @@ const SingleReportPage = async ({ params }: { params: { id: string } }) => {
 
   return (
     <div className="flex flex-col gap-3">
+      <SiteHeaderSetter title={`Authority: Report #${singleReport.id}`} />
+
       <Card>
         <CardHeader>
           <CardTitle>{singleReport.title}</CardTitle>

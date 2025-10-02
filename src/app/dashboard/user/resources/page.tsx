@@ -7,12 +7,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { SiteHeaderSetter } from "../../_components/SiteHeaderSetter";
 
 export default async function ResourcesPage() {
   const resources = await getResources();
 
   return (
     <div className="container mx-auto  flex flex-col gap-3">
+      {" "}
+      <SiteHeaderSetter title="User: Resources" />
       <Card>
         <CardHeader>
           <CardTitle>Resources</CardTitle>
@@ -21,7 +24,6 @@ export default async function ResourcesPage() {
           </CardDescription>
         </CardHeader>
       </Card>
-
       <ResourcesList resources={resources} />
     </div>
   );

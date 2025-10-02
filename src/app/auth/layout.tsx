@@ -12,9 +12,9 @@ const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
     headers: await headers(), // you need to pass the headers object.
   });
 
-  if (session) {
-    redirect("/dashboard");
-  }
+  // if (session) {
+  //   redirect("/dashboard");
+  // }
   return (
     <ScrollArea
       className="relative flex w-full  h-svh flex-col items-center justify-center bg-cover bg-center p-6 md:p-10"

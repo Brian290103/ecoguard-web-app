@@ -9,12 +9,19 @@ import {
 } from "@/components/ui/card";
 import type { Resource } from "@/db/schema";
 import { DeleteResourceButton } from "./DeleteResourceButton";
+import { authClient } from "@/lib/auth-client";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 type ResourceCardProps = {
   resource: Resource;
 };
 
-export function ResourceCard({ resource }: ResourceCardProps) {
+export async function ResourceCard({ resource }: ResourceCardProps) {
+  const session = await auth.api.getSession({
+    headers: await headers(), // you need to pass the headers object.
+  });
+
   return (
     <Card key={resource.id} className="flex flex-col">
       <CardContent>
@@ -57,7 +64,11 @@ export function ResourceCard({ resource }: ResourceCardProps) {
             Visit Website
           </a>
         )}
-        <DeleteResourceButton resourceId={resource.id} />
+        {session?.user.role === "org" && (
+          <div>
+            <DeleteResourceButton resourceId={resource.id} />
+          </div>
+        )}
       </CardFooter>
     </Card>
   );

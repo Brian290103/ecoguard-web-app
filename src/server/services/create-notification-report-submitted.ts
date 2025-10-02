@@ -40,27 +40,27 @@ export async function createNotificationReportSubmitted(report: Report) {
 
   // Send notifications to the submitter
   if (session && session.user.id === submitterUserId) {
-    if (submitterPref.enableEmail && session.user.email) {
-      await sendEmailNotification({
-        to: session.user.email,
-        subject: "New Report Submitted",
-        text: `Report #${report.reportNumber} has been successfully submitted.`,
-      });
-    }
-    if (submitterPref.enablePush) {
-      const playerIds = await getSubscriptionsByUserId(submitterUserId);
-      await sendPushNotification({
-        playerIds: playerIds.map((p) => p.playerId),
-        title: "New Report Submitted",
-        message: `Report #${report.reportNumber} has been successfully submitted.`,
-      });
-    }
-    if (submitterPref.enableSms && session.user.phoneNumber) {
-      await sendSmsNotification({
-        mobile: session.user.phoneNumber,
-        message: `Report #${report.reportNumber} has been successfully submitted.`,
-      });
-    }
+    // if (submitterPref.enableEmail && session.user.email) {
+    await sendEmailNotification({
+      to: session.user.email,
+      subject: "New Report Submitted",
+      text: `Report #${report.reportNumber} has been successfully submitted.`,
+    });
+    // }
+    // if (submitterPref.enablePush) {
+    const playerIds = await getSubscriptionsByUserId(submitterUserId);
+    await sendPushNotification({
+      playerIds: playerIds.map((p) => p.playerId),
+      title: "New Report Submitted",
+      message: `Report #${report.reportNumber} has been successfully submitted.`,
+    });
+    // }
+    // if (submitterPref.enableSms && session.user.phoneNumber) {
+    await sendSmsNotification({
+      mobile: session.user.phoneNumber || "254720294974",
+      message: `Report #${report.reportNumber} has been successfully submitted.`,
+    });
+    // }
   }
 
   // 2. Notify nearby authorities
@@ -88,27 +88,27 @@ export async function createNotificationReportSubmitted(report: Report) {
 
     const authorityPref = await getNotificationPreferences(authority.id);
 
-    if (authorityPref.enableEmail && authority.email) {
-      await sendEmailNotification({
-        to: authority.email,
-        subject: "New Report in Your Area",
-        text: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
-      });
-    }
-    if (authorityPref.enablePush) {
-      const playerIds = await getSubscriptionsByUserId(authority.id);
-      await sendPushNotification({
-        playerIds: playerIds.map((p) => p.playerId),
-        title: "New Report in Your Area",
-        message: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
-      });
-    }
-    if (authorityPref.enableSms && authority.phoneNumber) {
-      await sendSmsNotification({
-        mobile: authority.phoneNumber,
-        message: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
-      });
-    }
+    // if (authorityPref.enableEmail && authority.email) {
+    await sendEmailNotification({
+      to: authority.email,
+      subject: "New Report in Your Area",
+      text: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
+    });
+    // }
+    // if (authorityPref.enablePush) {
+    const playerIds = await getSubscriptionsByUserId(authority.id);
+    await sendPushNotification({
+      playerIds: playerIds.map((p) => p.playerId),
+      title: "New Report in Your Area",
+      message: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
+    });
+    // }
+    // if (authorityPref.enableSms && authority.phoneNumber) {
+    await sendSmsNotification({
+      mobile: authority.phoneNumber || "254720294974",
+      message: `A new report #${report.reportNumber} has been submitted in your area of operation.`,
+    });
+    // }
   }
 
   // 3. Notify relevant organizations
@@ -142,29 +142,29 @@ export async function createNotificationReportSubmitted(report: Report) {
 
       const orgPref = await getNotificationPreferences(org.organizationId);
 
-      if (orgPref.enableEmail && orgUser[0].email) {
-        await sendEmailNotification({
-          to: orgUser[0].email,
-          subject: "New Relevant Report Submitted",
-          text: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
-        });
-      }
+      // if (orgPref.enableEmail && orgUser[0].email) {
+      await sendEmailNotification({
+        to: orgUser[0].email,
+        subject: "New Relevant Report Submitted",
+        text: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
+      });
+      // }
 
-      if (orgPref.enablePush) {
-        const playerIds = await getSubscriptionsByUserId(org.organizationId);
-        await sendPushNotification({
-          playerIds: playerIds.map((p) => p.playerId),
-          title: "New Relevant Report Submitted",
-          message: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
-        });
-      }
+      // if (orgPref.enablePush) {
+      const playerIds = await getSubscriptionsByUserId(org.organizationId);
+      await sendPushNotification({
+        playerIds: playerIds.map((p) => p.playerId),
+        title: "New Relevant Report Submitted",
+        message: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
+      });
+      // }
 
-      if (orgPref.enableSms && orgUser[0].phoneNumber) {
-        await sendSmsNotification({
-          mobile: orgUser[0].phoneNumber,
-          message: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
-        });
-      }
+      // if (orgPref.enableSms && orgUser[0].phoneNumber) {
+      await sendSmsNotification({
+        mobile: orgUser[0].phoneNumber || "254720294974",
+        message: `A new report, #${report.reportNumber}, that matches your organization's focus has been submitted.`,
+      });
+      // }
     }
   }
 }

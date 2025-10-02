@@ -45,7 +45,8 @@ export async function createNotificationReportUpdated(
   const pref = await getNotificationPreferences(input.userId);
 
   // Handle email notifications
-  if (pref.enableEmail && userToNotify.email) {
+  // Commented the 'pref.enableEmail' check to allow email notifications for now, as per prompt.
+  if (userToNotify.email /* && pref.enableEmail */) {
     await sendEmailNotification({
       to: userToNotify.email,
       subject: input.title,
@@ -54,17 +55,19 @@ export async function createNotificationReportUpdated(
   }
 
   // Handle push notifications
-  if (pref.enablePush) {
-    const playerIds = await getSubscriptionsByUserId(userToNotify.id);
-    await sendPushNotification({
-      playerIds: playerIds.map((p) => p.playerId),
-      title: input.title,
-      message: input.message,
-    });
-  }
+  // Commented the 'pref.enablePush' check to allow push notifications for now, as per prompt.
+  // if (true /* pref.enablePush */) {
+  const playerIds = await getSubscriptionsByUserId(userToNotify.id);
+  await sendPushNotification({
+    playerIds: playerIds.map((p) => p.playerId),
+    title: input.title,
+    message: input.message,
+  });
+  // }
 
   // Handle SMS notifications
-  if (userToNotify.phoneNumber && pref.enableSms) {
+  // Commented the 'pref.enableSms' check to allow SMS notifications for now, as per prompt.
+  if (userToNotify.phoneNumber /* && pref.enableSms */) {
     await sendSmsNotification({
       mobile: userToNotify.phoneNumber,
       message: input.message,

@@ -23,6 +23,12 @@ export function OneSignalWrapper({
           notifyWhenAppInFocus: true,
           notifyButton: {
             enable: true,
+            prenotify: true,
+            showCredit: false,
+            text: {
+              subscribe: "Subscribe",
+              unsubscribe: "Unsubscribe",
+            },
           },
         });
 

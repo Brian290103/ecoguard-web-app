@@ -30,16 +30,17 @@ for (const key of requiredEnvs) {
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**", // allow all hosts
-      },
-      {
-        protocol: "http",
-        hostname: "**", // also allow http if needed
-      },
-    ],
+    unoptimized: true,
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "**", // allow all hosts
+    //   },
+    //   {
+    //     protocol: "http",
+    //     hostname: "**", // also allow http if needed
+    //   },
+    // ],
   },
   typescript: {
     ignoreBuildErrors: true,

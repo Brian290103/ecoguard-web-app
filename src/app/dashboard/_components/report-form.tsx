@@ -101,42 +101,42 @@ export function ReportForm() {
 
   const form = useForm<ReportFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      title: "Illegal Dumping of Waste Near River",
-      location: { lat: -1.286389, long: 36.817223 }, // Nairobi city center coords
-      categories: ["Waste Management", "Pollution"], // realistic categories
-      description:
-        "A large pile of waste has been dumped near the Nairobi River, posing a threat to local wildlife and water quality.",
-      priority: "medium",
-      imageUrls: [
-        {
-          name: "nairobi-river-waste.jpg",
-          size: 204800,
-          type: "image/jpeg",
-          ufsUrl:
-            "https://via.placeholder.com/600x400?text=Nairobi+River+Waste",
-        },
-      ],
-      videoUrls: [
-        {
-          name: "waste-video.mp4",
-          size: 1048576,
-          type: "video/mp4",
-          ufsUrl:
-            "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-        },
-      ],
-    },
-
     // defaultValues: {
-    //   title: "",
-    //   location: { lat: 0, long: 0 },
-    //   categories: [],
-    //   description: "",
-    //   priority: "low",
-    //   imageUrls: [] as MediaFile[],
-    //   videoUrls: [] as MediaFile[],
+    //   title: "Illegal Dumping of Waste Near River",
+    //   location: { lat: -1.286389, long: 36.817223 }, // Nairobi city center coords
+    //   categories: ["Waste Management", "Pollution"], // realistic categories
+    //   description:
+    //     "A large pile of waste has been dumped near the Nairobi River, posing a threat to local wildlife and water quality.",
+    //   priority: "medium",
+    //   imageUrls: [
+    //     {
+    //       name: "nairobi-river-waste.jpg",
+    //       size: 204800,
+    //       type: "image/jpeg",
+    //       ufsUrl:
+    //         "https://via.placeholder.com/600x400?text=Nairobi+River+Waste",
+    //     },
+    //   ],
+    //   videoUrls: [
+    //     {
+    //       name: "waste-video.mp4",
+    //       size: 1048576,
+    //       type: "video/mp4",
+    //       ufsUrl:
+    //         "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+    //     },
+    //   ],
     // },
+
+    defaultValues: {
+      title: "",
+      location: { lat: 0, long: 0 },
+      categories: [],
+      description: "",
+      priority: "low",
+      imageUrls: [] as MediaFile[],
+      videoUrls: [] as MediaFile[],
+    },
   });
 
   const title = form.watch("title");

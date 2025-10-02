@@ -21,7 +21,7 @@ COPY . .
 
 # ✅ Supply dummy envs so Next.js build doesn’t crash
 ENV BETTER_AUTH_SECRET=ReMU8ToI6A4Fy5IeS2avQoqtAISNzHbg \
-    NEXT_PUBLIC_URL=http://i0c4gokk4ccw4koskkgwwgs4.129.159.252.135.sslip.io \
+    NEXT_PUBLIC_URL=https://i0c4gokk4ccw4koskkgwwgs4.129.159.252.135.sslip.io \
     DATABASE_URL=postgresql://neondb_owner:npg_1OYzL9WscIHF@ep-orange-surf-adfzgdkw-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require \
     GOOGLE_GENERATIVE_AI_API_KEY=AIzaSyBOemHBi1K-BJWrHlPTsF0hLj7V0U_PxN4 \
     UPLOADTHING_TOKEN=eyJhcGlLZXkiOiJza19saXZlXzk1NDViYzhlYmZiYzQ2YmY2YTU2YmU5NTljYTI4NjMyNGQzODc0YzYwNTg0Y2FlODI0NDAyYzAxYmZmY2QwZjciLCJhcHBJZCI6IjltZHh0NG84eGIiLCJyZWdpb25zIjpbInNlYTEiXX0= \

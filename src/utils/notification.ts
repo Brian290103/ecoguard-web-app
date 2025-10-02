@@ -88,9 +88,8 @@ export async function sendSmsNotification({
     mobile,
     status: "success (test mode)",
   });
-  return;
+  // return;
 
-  /* Actual implementation commented out for testing
   try {
     const options = {
       method: "POST",
@@ -120,5 +119,4 @@ export async function sendSmsNotification({
   } catch (error) {
     console.error("Failed to send SMS notification:", error);
   }
-  */
 }
